@@ -1,0 +1,12 @@
+body { background-color: #f2f2f2; font:20px 'consolas', 'メイリオ'; color:  #4d4d4d ; }
+header { height: 60px; }
+footer { height: 60px; }
+button { height: 50px; border-radius: 5px; }
+select { height: 42px; line-height: 42px; border-radius: 5px; }
+input[type="checkbox"] {display: none;}
+input[type="checkbox"] + .checkbox-icon::before { display: inline-block; content: "-"; width: 20px; font-size: 22px; color: gray; }
+input[type="checkbox"]:checked + .checkbox-icon::before { content: "✔"; color: royalblue; font-size: 18px; }
+.text1 { height: 40px; border-radius: 5px; }
+.text2 { height: 40px; border:none; border-bottom-style: solid; }
+.mark1 { background-color: red; color: white; height: 20px; font-size: 12px; border-radius: 3px; width: 2em; padding: 0 4px; }
+.mark2 { background-color: blue; color: white; height: 20px; font-size: 12px; border-radius: 3px; width: 2em; padding: 0 4px; }

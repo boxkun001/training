@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="default.css" rel="stylesheet">
+<title></title>
+<style>   
+/* container */
+.container{ min-width: 650px; }
+
+/* header */
+header *{ display: inline-block; text-align: left; margin:auto; }
+header > .rhead{ float: right; }
+.coname{ border-bottom: 2px solid #4d4d4d; }
+.conum{ border-bottom: 2px solid #4d4d4d; }
+
+/* section*/
+section{ width: 100%; }
+.contents { width:700px; margin: auto; }
+.group > *{ display: inline-block; margin: 5px auto; }
+section{ height: calc(100vh - 140px); min-height: 310px; }
+.label{ width: 6em; text-align: right; }
+.check_group{ border: 2px solid #4d4d4d; border-radius: 3px; padding: 3px; text-align: center; }
+
+/* buttons */
+.back_button{ width: 100px; background-color: lightgray; }
+.regist_button{ float: right; width: 100px; background-color: green; color: white; }
+</style>
+</head>
+<body>
+        <div class="container">
+                <header>
+                        <div class="lhead">
+                                <h2 class="ym">9999年99月</h2>
+                        </div>
+                        <div class="rhead">
+                                <h2 class="conum">9999</h2>
+                                <h2 class="coname">NNNNNNNNNNNNNNNNNNNN</h2>
+                        </div>
+                </header>
+                <section>
+                        <div class="contents">
+                                <div class="group">
+                                        <div class="label">区分</div>
+                                        <div class="mark1">必須</div>
+                                        <div class="check_group" style="width: 348px;">
+                                                <label> <input type="checkbox" class="checkbox"><span class="checkbox-icon"></span>通常 </label>
+                                                <label> <input type="checkbox" class="checkbox"><span class="checkbox-icon"></span>AM休 </label>
+                                                <label> <input type="checkbox" class="checkbox"><span class="checkbox-icon"></span>PM休 </label>
+                                                <label> <input type="checkbox" class="checkbox"><span class="checkbox-icon"></span>全休 </label>
+                                                <label> <input type="checkbox" class="checkbox"><span class="checkbox-icon"></span>休出 </label>
+                                        </div>
+                                </div>
+                                <div class="group">
+                                        <div class="label">出社時刻</div>
+                                        <div class="mark1">必須</div>
+                                        <select>
+                                                <option>00</option>
+                                                <option>01</option>
+                                                <option>02</option>
+                                                <option>03</option>
+                                                <option>04</option>
+                                                <option>05</option>
+                                                <option>06</option>
+                                                <option>07</option>
+                                                <option>08</option>
+                                                <option>09</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                                <option>13</option>
+                                                <option>14</option>
+                                                <option>15</option>
+                                                <option>16</option>
+                                                <option>17</option>
+                                                <option>18</option>
+                                                <option>19</option>
+                                                <option>20</option>
+                                                <option>21</option>
+                                                <option>22</option>
+                                                <option>23</option>
+                                        </select>
+                                        :
+                                        <select>
+                                                <option>00</option>
+                                                <option>15</option>
+                                                <option>30</option>
+                                                <option>45</option>
+                                        </select>
+                                </div>
+                                <div class="group">
+                                        <div class="label">退社時刻</div>
+                                        <div class="mark1">必須</div>
+                                        <select>
+                                                <option>00</option><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option>
+                                                <option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option>
+                                        </select>
+                                        :
+                                        <select>
+                                                <option>00</option><option>15</option><option>30</option><option>45</option>
+                                        </select>
+                                        <div class="group">
+                                                <div class="label" style="margin-right: 2em;">勤務時間</div>
+                                                <div>99時間99分</div>
+                                        </div>
+                                </div>
+                                <div class="group">
+                                        <div class="label">直出・直帰</div>
+                                        <div class="mark2">任意</div>
+                                        <div class="check_group" style="width: 131px;">
+                                                <label> <input type="checkbox" class="checkbox"><span class="checkbox-icon"></span>直出 </label>
+                                                <label> <input type="checkbox" class="checkbox"><span class="checkbox-icon"></span>直帰 </label>
+                                        </div>
+                                </div>
+                                <div class="group">
+                                <div class="label">備考</div>
+                                <div class="mark2">任意</div>
+                                <input type="text" class="text2" style="width: 500px;">
+                                </div>
+                        </div>
+                </section>
+                <footer>
+                        <button class="back_button" type="button" onclick="location.href = 'index.htm'">🕑戻る</button>
+                        <button class="regist_button" type="button" onclick="location.href = 'index.htm'">💾登録</button>
+                </footer>
+        </div>            
+</body>
+</html>
