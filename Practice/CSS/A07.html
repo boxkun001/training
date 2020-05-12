@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>演習問題07</title>
+    <style>
+        /*◆default はじめ◆*/
+        body {
+            width: 900px;
+            margin: 20px auto;
+            font-family:  noto sans cjk jp, consolas, 'メイリオ'
+        }
+        h1 { font-size: 150%; }
+        h2 { font-size: 120%; }
+        /*◆default おわり◆*/
+        
+        /*◆border, background-color 設定はじめ◆*/
+        .header, .footer, .nav, 
+        .contents > div, 
+        .contents > div > div{
+            border: 3px solid #e2e2e2;
+            background-color: #eeeeee;
+        }
+        .contents > div > div{
+            margin: 10px;
+        }
+        /*◆border, background-color 設定おわり◆*/
+
+        /*◆サイズ設定はじめ◆*/
+        .header, .footer, .nav {
+            width: 874px;
+            margin: 10px;
+            text-align: center;
+        }
+        /*◆サイズ設定おわり◆*/
+        
+        /*◆navの設定はじめ◆*/
+        /* h1を見えなく */
+        .nav > h1{ display: none; } 
+
+        /* ulの左のpaddingを０に */
+        .nav ul{ padding-left: 0; }
+
+        /* liのstyleを設定 */
+        .nav ul li{
+            list-style: none;
+            display: inline;
+            padding: 0px;
+        }
+        /*◆navの設定おわり◆*/
+
+        /*◆floatとサイズの設定はじめ◆*/
+        .contents{
+            float: left;
+            width: 880px;
+            margin: 0 10px;
+            }
+        .article{
+            float: left;
+            width: 560px;
+         }
+        .aside{
+            float: right;
+            width: 300px;
+        }
+        .footer{float: left;}
+        /*◆floatとサイズの設定おわり◆*/
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="hgroup">
+            <h1>ページのタイトル</h1>
+            <h2>ページのサブタイトル</h2>
+        </div>
+        <p>ヘッダ情報</p>
+    </div>
+
+    <div class="nav">
+        <h1>グローバルナビゲーション</h1>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Others</a></li>
+            <li><a href="#">ABOUT</a></li>
+        </ul>
+    </div>
+
+    <div class="contents">
+        <div class="article">
+            <div class="section">
+                <h1>コンテンツ１の見出し</h1>
+                <div>
+                    <p>コンテンツ１の内容のテキスト</p>
+                </div>
+            </div>
+            <div class="section">
+                <h1>コンテンツ２の見出し</h1>
+                <div>
+                    <p>１行目<br />２行目</p>
+                </div>
+            </div>
+        </div>
+        <div class="aside">
+            <div class="section">
+                <h1>カテゴリＡ</h1>
+                <ul>
+                    <li><a href="#">カテゴリＡ－１</a></li>
+                </ul>
+            </div>
+            <div class="section">
+                <h1>カテゴリＢ</h1>
+                <ul>
+                    <li><a href="#">カテゴリＢ－１</a></li>
+                    <li><a href="#">カテゴリＢ－２</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Copyright &copy; <a href="#">XYZ</a> All Rights Reserved.
+        <div class="address">お問い合わせは<a href="#">Yamada.Tarou@xyz.jp</a>までメールをお送りください。</div>
+    </div class="footer">
+</body>
+
+</html>

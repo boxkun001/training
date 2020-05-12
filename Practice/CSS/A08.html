@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>演習問題08</title>
+
+    <style>
+        .container{
+            display: flex; 
+            width:inherit;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Yu Gothic', Arial, Helvetica, sans-serif;
+        }
+        table{
+            border-collapse: collapse;
+            margin: 50px;
+        }
+        th:first-child{
+            position: relative;
+        }
+        th:first-child:after {
+            content: " ";
+            position: absolute;
+            right: 10px;
+            top:20px;
+            height: 0; width: 0;
+            border:5px solid transparent;
+            border-bottom: 5px solid blue;
+        }
+        th, td{
+            padding: 12px;
+            width: 150px;
+            border: 1px solid cadetblue;
+        }
+        th{background-color: rgba(192, 192, 192, 0.2);}
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>100</td>
+                    <td>Taro</td>
+                    <td>Yamada</td>
+                </tr>
+                <tr>
+                    <td>200</td>
+                    <td>Hanako</td>
+                    <td>Yamada</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
