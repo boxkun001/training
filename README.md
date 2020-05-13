@@ -2,6 +2,7 @@
 
 ## このrepoは？
 研修中に作成したものを共有、保存するため作りました。
+まとめた内容はwikiにあります。
 [wikiを見る](https://github.com/boxkun001/training/wiki)
 
 ## CSSTraining
