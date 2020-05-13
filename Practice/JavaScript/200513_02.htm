@@ -15,11 +15,12 @@
     '/', 
     ('0' + now.getDate()).slice(-2), 
     ' ', 
-    now.getHours(), 
+    ('0' + now.getHours()).slice(-2), 
     ':', 
-    now.getMinutes(), 
+    ('0' + now.getMinutes()).slice(-2), 
     ':', 
-    now.getSeconds() );
+    ('0' + now.getSeconds()).slice(-2)
+    );
 </script>
 </head>
 <body>
