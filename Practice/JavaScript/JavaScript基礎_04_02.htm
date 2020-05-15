@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link href="default.css" rel="stylesheet">
+<title>練習問題０２</title>
+<script>
+  let arr = new Array(); 
+  arr[0] = { title: 'JavaScriptとは', slide_no: 3 }; 
+  arr[1] = { title: 'JavaScriptをHTMLに組み込む', slide_no: 5 }; 
+  arr[2] = { title: 'HTML要素のイベント属性', slide_no: 8 }; 
+  arr[3] = { title: '参考情報：document.write', slide_no: 12 }; 
+  arr[4] = { title: '参考情報：alert', slide_no: 13 }; 
+  arr[5] = { title: '参考情報：console.log', slide_no: 14 };
+  arr[6] = { title: 'ステートメント', slide_no: 16 }; 
+  arr[7] = { title: 'データ型', slide_no: 18 }; 
+  arr[8] = { title: 'リテラル', slide_no: 31 };
+
+  for (let value of arr) {
+    if(value.title.includes('情報'))
+      document.write('title:【',value.title , '】、slide_no:【',value.slide_no , '】<br>');
+  }
+</script>
+</head>
+<body>
+</body>
+</html>
