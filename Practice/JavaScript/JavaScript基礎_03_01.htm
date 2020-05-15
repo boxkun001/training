@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link href="default.css" rel="stylesheet">
+<title>練習問題０１</title>
+<script>
+  function LeapYear(year) {
+      let leaptrue = '今年はうるう年です';
+      let leapfalse = '今年はうるう年ではありません';
+      if(year%4==0){
+        if(year%100!=0) return leaptrue;
+        else if(year%400==0) return leaptrue;
+      }
+      return leapfalse;
+  }
+  function Youbi(num){
+    switch(num){
+      case 0: return '日';
+      case 1: return '月';
+      case 2: return '火';
+      case 3: return '水';
+      case 4: return '木';
+      case 5: return '金';
+      case 6: return '土';
+      default: return null;
+    }
+  }
+let now = new Date();
+  document.write(
+    now.getFullYear(), 
+    '年', 
+    ('0' + (now.getMonth() + 1)).slice(-2), 
+    '月', 
+    ('0' + now.getDate()).slice(-2), 
+    '日（', 
+    Youbi(now.getDay()), 
+    '曜日）',  
+    ('0' + now.getHours()).slice(-2), 
+    '時', 
+    ('0' + now.getMinutes()).slice(-2), 
+    '分', 
+    ('0' + now.getSeconds()).slice(-2), 
+    '秒<br>',
+    LeapYear(now.getFullYear())
+    );
+
+
+</script>
+</head>
+<body>
+</body>
+</html>
