@@ -9,10 +9,7 @@
   function LeapYear(year) {
       let leaptrue = '今年はうるう年です';
       let leapfalse = '今年はうるう年ではありません';
-      if(year%4==0){
-        if(year%100!=0) return leaptrue;
-        else if(year%400==0) return leaptrue;
-      }
+      if(year%4===0  && year%100!==0 || year%400===0) return leaptrue;
       return leapfalse;
   }
   function Youbi(num){
