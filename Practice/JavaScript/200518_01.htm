@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>関数オブジェクトサンプル</title>
+</head>
+
+<body>
+    <script>
+        function arithmetic(val1, val2, operation) {
+            switch (operation) {
+                case '+':
+                    document.write(val1, ' + ', val2, ' = ');
+                    return (val1 + val2);
+                case '-':
+                    document.write(val1, ' - ', val2, ' = ');
+                    return (val1 - val2);
+                case '*':
+                    document.write(val1, ' × ', val2, ' = ');
+                    return (val1 * val2);
+                case '/':
+                    document.write(val1, ' ÷ ', val2, ' = ');
+                    return (val1 / val2);
+                default:
+                    document.write('入力が正しくありません。');
+                    return null;
+            }
+        }
+        let val = arithmetic;
+        document.write('<p>', val.toString(), '</p>');
+        let val2 = val(1000, 2000, '+');
+        document.write(val2, '<br>');
+    </script>
+</body>
+
+</html>
