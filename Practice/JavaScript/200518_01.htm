@@ -9,18 +9,15 @@
 <body>
     <script>
         function arithmetic(val1, val2, operation) {
+            document.write(val1, ' ', operation, ' ', val2, ' = ');
             switch (operation) {
                 case '+':
-                    document.write(val1, ' + ', val2, ' = ');
                     return (val1 + val2);
                 case '-':
-                    document.write(val1, ' - ', val2, ' = ');
                     return (val1 - val2);
                 case '*':
-                    document.write(val1, ' × ', val2, ' = ');
                     return (val1 * val2);
                 case '/':
-                    document.write(val1, ' ÷ ', val2, ' = ');
                     return (val1 / val2);
                 default:
                     document.write('入力が正しくありません。');
