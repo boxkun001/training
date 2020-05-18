@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="default.css" rel="stylesheet">
+    <title>練習問題０８</title>
+    <script>
+        function sort(arr) {
+            document.write('対象の配列[', arr, ']<hr>');
+            arr = shellSort(arr, gapFunc(arr));
+            document.write('並び替え後の配列[', arr, ']')
+        }
+
+        function gapFunc(arr) {
+            return Math.floor(arr.length / 6) * 3 + 1;
+        }
+
+        function shellSort(arr, gap) {
+            while (gap > 0) {
+                for (var i = gap; i < arr.length; i++) {
+                    var temp = arr[i];
+                    var j = i;
+                    while (j >= gap && arr[j - gap] > temp) {
+                        arr[j] = arr[j - gap];
+                        j -= gap;
+                    }
+                    arr[j] = temp;
+                }
+                gap = Math.floor(gap / 2);
+                document.write('[', arr, ']<hr>');
+            }
+            return arr;
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        sort([31, 2, 60, 5, 28, 8, 25, 1, 57, 20]);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="default.css" rel="stylesheet">
+    <title>練習問題０２</title>
+    <script>
+        function search(num, arr) {
+            document.write('対象の配列[', arr, ']<hr>');
+            document.write('探したい値[', num, ']<hr>');
+            findWrite(linearSearch(num, arr));
+        }
+
+        function findWrite(num) {
+            if (num === -1) document.write('探したい値は見つかりませんでした');
+            else document.write('さがした値は', num + 1, '番目にありました');
+        }
+
+        function linearSearch(num, arr) {
+            for (let [i, v] of arr.entries())
+                if (v === num)
+                    return i + 1;
+            return -1;
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        search(5, [31, 2, 28, 5, 60]);
+    </script>
+</body>
+
+</html>

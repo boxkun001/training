@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="default.css" rel="stylesheet">
+    <title>練習問題０５</title>
+    <script>
+        function sort(arr) {
+            document.write('対象の配列[', arr, ']<hr>');
+            bubble_sort(arr);
+            document.write('並び替え後の配列[', arr, ']')
+        }
+
+        function bubble_sort(arr) {
+            for (let i = 0; i < arr.length - 1; i++) {
+                for (let j = arr.length - 1; j > i; j--)
+                    if (arr[j] < arr[j - 1])
+                        [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]];
+                document.write('[', arr, ']<hr>');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        sort([31, 2, 60, 5, 28]);
+    </script>
+</body>
+
+</html>

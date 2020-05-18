@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="default.css" rel="stylesheet">
+    <title>練習問題０４</title>
+    <script>
+        function sort(arr) {
+            document.write('対象の配列[', arr, ']<hr>');
+            selection_sort(arr);
+            document.write('並び替え後の配列[', arr, ']')
+        }
+
+        function selection_sort(arr) {
+            let least;
+            for (let i = 0; i < arr.length - 1; i++) {
+                least = i;
+                for (j = i + 1; j < arr.length; j++)
+                    if (arr[j] < arr[least]) least = j;
+                if (i != least)
+                    [arr[i], arr[least]] = [arr[least], arr[i]];
+                document.write('>>', arr, '<hr>');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        sort([31, 2, 60, 5, 28]);
+    </script>
+</body>
+
+</html>

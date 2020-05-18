@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>カレンダー</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+        
+        table {
+            width: 440px;
+            border-collapse: collapse;
+            border: solid 2px;
+        }
+        
+        th,
+        td {
+            height: 55px;
+            border: solid 2px silver;
+        }
+        
+        th {
+            text-align: center;
+            background-color: lightgray;
+        }
+        
+        td {
+            text-align: center;
+            background-color: #fefefe;
+        }
+        
+        th:nth-child(7),
+        td:nth-child(7) {
+            color: #00f;
+            background: #e0f0fc;
+        }
+        
+        th:nth-child(1),
+        td:nth-child(1) {
+            color: #f00;
+            background: #fef2f3;
+        }
+    </style>
+    <script>
+        function FormatedYearAndMonth(target) {
+            this.format = 'YYYY年MM月';
+            this.yearAndMonth = this.format.replace(/YYYY/, target.getFullYear()).replace(/MM/, ('0' + (target.getMonth() + 1)).slice(-2));
+        }
+
+        function CreateCalendarDate(yyyy, mm) {
+            this.calendarDate = new Date();
+            this.calendarDate.setFullYear(yyyy);
+            this.calendarDate.setDate(1);
+            this.calendarDate.setMonth(mm - 1);
+        }
+
+        function calendar(yyyy, mm) {
+            let calendarDate = new CreateCalendarDate(yyyy, mm);
+            let target = calendarDate.calendarDate;
+
+            let format = new FormatedYearAndMonth(target).yearAndMonth;
+            document.write('<h2>', format, '</h2>');
+            document.write('<table>');
+            document.write('<tr>', '<th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th>', '</tr>');
+
+            insertDate(yyyy, mm); // ここを作成してください
+
+            document.write('</table>');
+        };
+
+        function insertDate(yyyy, mm) {
+            let firstDate = new Date(yyyy, mm - 1, 1);
+            let lastDate = new Date(yyyy, mm, 0);
+            let line = Math.ceil((lastDate.getDate() + firstDate.getDay()) / 7);
+            let nowDate = 0;
+
+            for (let i = 0; i < line; i++) {
+                document.write('<tr>');
+                switch (i) {
+                    case 0:
+                        let j;
+                        for (j = 0; j < firstDate.getDay(); j++) document.write('<td>--</td>');
+                        while (j < 7) {
+                            nowDate++;
+                            document.write('<td>', nowDate, '</td>');
+                            j++;
+                        }
+                        break;
+                    case (line - 1):
+                        for (let j = 0; j < 7; j++) {
+                            if (nowDate < lastDate.getDate()) {
+                                nowDate++;
+                                document.write('<td>', nowDate, '</td>');
+                            } else document.write('<td>--</td>');
+                        }
+                        break;
+                    default:
+                        for (let j = 0; j < 7; j++) {
+                            nowDate++;
+                            document.write('<td>', nowDate, '</td>');
+                        }
+                        break;
+                }
+            }
+            document.write('</tr>');
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        calendar(2020, 2);
+    </script>
+</body>
+
+</html>

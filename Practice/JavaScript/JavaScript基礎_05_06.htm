@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="default.css" rel="stylesheet">
+    <title>練習問題０６</title>
+    <script>
+        function sort(arr) {
+            document.write('対象の配列[', arr, ']<hr>');
+            insert_sort(arr);
+            document.write('並び替え後の配列[', arr, ']')
+        }
+
+        function insert_sort(arr) {
+            for (let i = 1; i < arr.length; i++) {
+                let key = arr[i];
+                for (j = i - 1; j >= 0 && arr[j] > key; j--) arr[j + 1] = arr[j];
+                arr[j + 1] = key;
+                document.write('[', arr, ']<hr>');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        sort([31, 2, 60, 5, 28]);
+    </script>
+</body>
+
+</html>
