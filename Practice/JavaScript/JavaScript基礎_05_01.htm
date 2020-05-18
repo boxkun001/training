@@ -51,15 +51,17 @@
             this.yearAndMonth = this.format.replace(/YYYY/, target.getFullYear()).replace(/MM/, ('0' + (target.getMonth() + 1)).slice(-2));
         }
 
+        /*
         function CreateCalendarDate(yyyy, mm) {
             this.calendarDate = new Date();
             this.calendarDate.setFullYear(yyyy);
             this.calendarDate.setDate(1);
             this.calendarDate.setMonth(mm - 1);
         }
+        */
 
         function calendar(yyyy, mm) {
-            let calendarDate = new CreateCalendarDate(yyyy, mm);
+            //let calendarDate = new CreateCalendarDate(yyyy, mm);
             let target = calendarDate.calendarDate;
 
             let format = new FormatedYearAndMonth(target).yearAndMonth;
