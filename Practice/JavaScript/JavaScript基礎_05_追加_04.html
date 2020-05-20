@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="default.css" rel="stylesheet">
+    <title>練習問題_追加０４</title>
+    <script>
+        function findMin(arr) {
+            let min = arr[0];
+            for (a of arr) {
+                if (a < min)
+                    min = a;
+            }
+            return min;
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        document.write(findMin([31, 2, 60, 5, 28, 8, 25, 1, 57, 20]));
+    </script>
+</body>
+
+</html>

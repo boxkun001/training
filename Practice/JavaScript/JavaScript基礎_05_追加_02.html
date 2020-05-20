@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="default.css" rel="stylesheet">
+    <title>練習問題_追加０２</title>
+    <script>
+        function swap(arr, left, right) {
+            let temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        let arr = [31, 2, 60, 5, 28, 8, 25, 1, 57, 20];
+
+        document.write(arr, '<br>');
+        swap(arr, 2, 6);
+        document.write(arr, '<br>');
+    </script>
+</body>
+
+</html>

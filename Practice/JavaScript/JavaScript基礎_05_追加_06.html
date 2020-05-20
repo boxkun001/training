@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="default.css" rel="stylesheet">
+    <title>練習問題_追加０６</title>
+    <script>
+        function swap(arr, left, right) {
+            let temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+        }
+
+        function shuffle(arr) {
+            for (let num = arr.length - 1; num > 0; num--) {
+                let val = Math.floor(Math.random() * num);
+                swap(arr, val, num);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        let a = [31, 2, 60, 5, 28, 8, 25, 1, 57, 20];
+        shuffle(a);
+        document.write(a);
+    </script>
+</body>
+
+</html>
