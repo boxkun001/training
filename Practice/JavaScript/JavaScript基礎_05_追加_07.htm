@@ -21,10 +21,12 @@
 
         function sort(arr) {
             for (let left = 0; left < arr.length; left++) {
-                for (let right = left; right < arr.length; right++) {
+                for (let right = left + 1; right < arr.length; right++) {
                     if (0 < valueCompare(arr[left], arr[right]))
                         swap(arr, left, right);
+                    //document.write(arr, '<br>');
                 }
+                //document.write('<hr>');
             }
             return arr;
         }
@@ -33,6 +35,7 @@
 
 <body>
     <script>
+        //document.write([31, 2, 60, 5, 28, 8, 25, 1, 57, 20], '<br><hr>');
         document.write('結果：', sort([31, 2, 60, 5, 28, 8, 25, 1, 57, 20]));
     </script>
 </body>
