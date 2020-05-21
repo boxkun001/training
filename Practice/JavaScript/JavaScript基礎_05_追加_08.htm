@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="default.css" rel="stylesheet">
+    <title>練習問題追加０８</title>
+    <script>
+        function printArr(arr) {
+            for (let a of arr) {
+                document.write(a);
+            }
+            document.write('<br>');
+        }
+
+        function kumiawase(n) {
+            let arr = new Array(n);
+            recursiveFunc(arr, n, 0);
+        }
+
+        function recursiveFunc(arr, n, i) {
+            for (let j = 1; j <= n; j++) {
+                if (n === i) {
+                    printArr(arr);
+                    return;
+                }
+                arr[i] = j
+                recursiveFunc(arr, n, i + 1);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        let n = 3;
+        kumiawase(n);
+    </script>
+</body>
+
+</html>
