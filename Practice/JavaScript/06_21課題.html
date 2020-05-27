@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基礎_06 21ページ目の課題</title>
+    <style>
+        .table {
+            display: table;
+            border-collapse: collapse;
+            border: 2px solid green;
+        }
+        
+        .tr {
+            display: table-row;
+        }
+        
+        .td,
+        .th {
+            display: table-cell;
+            border: 2px solid green;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="table" class="table" name="table">
+        <div id="tr1" class="thead tr" name="row">
+            <div id="th1" class="th" name="cell">見出し１</div>
+            <div id="th2" class="th" name="cell">見出し２</div>
+        </div>
+        <div id="tr2" class="tbody tr" name="row">
+            <div id="td1" class="td" name="cell">
+                <input type="text" id="txt1" name="txt" value="テキスト">
+            </div>
+            <div id="td2" class="td" name="cell">
+                <input type="button" id="btn1" name="btn" value="ボタン">
+            </div>
+        </div>
+    </div>
+    <script>
+        /*
+         * 課題１
+         * 　name属性の値が cell で、class属性の値に th を含む Elementオブジェクト を取得して、
+         * 　　・該当のHTML要素の要素名
+         * 　　・該当のHTML要素のid属性の値
+         * 　　・該当のHTML要素のテキスト
+         * 　をコンソールに出力してください。
+         * 　取得する Elementオブジェクト は、最初に見つかった１つだけとしてください。
+         */
+        let el = document.querySelector('.th[name=cell]');
+        console.log(el.tagName, el.getAttribute('id'), el.textContent);
+    </script>
+</body>
+
+</html>
