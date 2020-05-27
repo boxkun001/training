@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基礎_06 19ページ目の課題</title>
+    <style>
+        .table {
+            display: table;
+            border-collapse: collapse;
+            border: 2px solid green;
+        }
+        
+        .tr {
+            display: table-row;
+        }
+        
+        .td,
+        .th {
+            display: table-cell;
+            border: 2px solid green;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="table" class="table" name="table">
+        <div id="tr1" class="thead tr" name="row">
+            <div id="th1" class="th" name="cell">見出し１</div>
+            <div id="th2" class="th" name="cell">見出し２</div>
+        </div>
+        <div id="tr2" class="tbody tr" name="row">
+            <div id="td1" class="td" name="cell">
+                <input type="text" id="txt1" name="txt" value="テキスト">
+            </div>
+            <div id="td2" class="td" name="cell">
+                <input type="button" id="btn1" name="btn" value="ボタン">
+            </div>
+        </div>
+    </div>
+    <script>
+        /*
+         * 課題１
+         * 　要素名が div の Elementオブジェクト を取得して、
+         * 　　・該当のHTML要素の要素名
+         * 　　・該当のHTML要素のid属性の値
+         * 　をコンソールに出力してください。
+         */
+        let divs = document.getElementsByTagName('div');
+        for (let a of divs) console.log(a.tagName, ' / ', a.getAttribute('id'));
+    </script>
+</body>
+
+</html>
