@@ -131,9 +131,8 @@
         </div>
     </div>
     <script>
-        let els = document.querySelectorAll('[name*="httpd"]');
-        for (let el of els)
-            console.log(el.attributes['name'].value);
+        let el = document.getElementById('login_frm');
+        console.log(el.tagName);
     </script>
 </body>
 
