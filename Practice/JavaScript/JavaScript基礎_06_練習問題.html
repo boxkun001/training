@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript基礎_06_練習問題</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: silver;
+            color: #5e5e5e;
+            font: 400 87.5% / 1.5em consolas, sans-serif;
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: 100vw;
+            grid-template-columns: 100vw;
+            -ms-grid-rows: 100vh;
+            grid-template-rows: 100vh;
+        }
+        
+        .form-wrapper {
+            background-color: snow;
+            padding: 0 1em;
+            max-width: 4000px;
+            border-radius: 5px;
+            -ms-grid-column-align: center;
+            justify-self: center;
+            -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+        }
+        
+        h1 {
+            text-align: center;
+            padding: 1em 0;
+        }
+        
+        form {
+            padding: 0 1.5em;
+        }
+        
+        .form-item {
+            margin-bottom: 0.75em;
+            width: 100%;
+        }
+        
+        .form-item input {
+            background-color: snow;
+            border: none;
+            border-bottom: 2px solid gainsboro;
+            color: #666;
+            font-family: consolas, sans-serif;
+            font-size: 1em;
+            height: 50px;
+            margin-left: 1em;
+            transition: border-color 0.3s;
+            width: 93%;
+        }
+        
+        .form-item input:focus {
+            transition: 0.5s ease-in-out;
+            border-bottom: 2px solid tomato;
+            outline: none;
+        }
+        
+        .button-panel {
+            margin: 2em 0 0;
+            width: 100%;
+        }
+        
+        .button-panel .button {
+            background-color: chocolate;
+            border: none;
+            color: snow;
+            cursor: pointer;
+            height: 50px;
+            font-family: consolas, sans-serif;
+            font-size: 1.2em;
+            letter-spacing: 0.05em;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.3s ease-in-out;
+            width: 100%;
+        }
+        
+        .button:hover {
+            background-color: crimson;
+        }
+        
+        .form-footer {
+            padding: 1em 0;
+        }
+        
+        .fly {
+            box-shadow: 20px 25px 20px #777;
+        }
+        
+        input::-ms-input-placeholder {
+            opacity: 0.4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-wrapper fly">
+
+        <h1>ログイン</h1>
+        <form id="login_frm" method="POST" action="/login_check.do">
+            <div class="form-item">
+                <label for="id">👮ログインID</label>
+                <input type="text" name="httpd_username" placeholder="ログインIDを入力してください" value="" autofocus required>
+            </div>
+            <div class="form-item">
+                <label for="password">🔓パスワード</label>
+                <input type="password" name="httpd_password" placeholder="パスワードを入力してください" required>
+            </div>
+            <div class="button-panel">
+                <button class="button submit_btn raised ripple">
+                    <span>ログイン</span>
+                </button>
+            </div>
+        </form>
+        <div class="form-footer">
+        </div>
+    </div>
+    <script>
+        let els = document.getElementsByClassName('form-item');
+        for (let el of els)
+            console.log(el.className, el.tagName, el.firstElementChild.textContent);
+    </script>
+</body>
+
+</html>
