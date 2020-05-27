@@ -50,8 +50,9 @@
          * 　をコンソールに出力してください。
          * 　取得する Elementオブジェクト は、すべてとしてください。
          */
-        let els = document.querySelectorAll('.th[name=cell]');
-        for (let el of els) console.log(el.tagName, '／', el.getAttribute('id'), '／', el.textContent);
+        let els = document.querySelectorAll('.th[name="cell"]');
+        for (let el of els)
+            console.log(el.tagName, '／', el.getAttribute('id'), '／', el.textContent);
     </script>
 </body>
 
