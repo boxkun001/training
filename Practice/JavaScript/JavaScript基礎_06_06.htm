@@ -131,11 +131,23 @@
          * 　JavaScriptを作成してください。
          */
 
+        //「#form-wrapper」適用
         document.getElementsByClassName('fly')[0].id = 'form-wrapper';
-        document.getElementById('id').setAttribute('name', 'httpd-id');
-        for (let item of document.getElementsByClassName('form-item')) item.setAttribute('name', 'form-item');
-        document.getElementById('password').setAttribute('name', 'httpd-pw');
+
+        //「#login-frm」適用
         document.querySelector('div[class="fly"] > form').id = 'login-frm';
+
+
+        //「.form-item」たちのnameを設定
+        for (let item of document.getElementsByClassName('form-item')) item.setAttribute('name', 'form-item');
+
+        //「.form-item > input」たちのnameを設定
+        document.getElementById('id').setAttribute('name', 'httpd-id');
+        document.getElementById('password').setAttribute('name', 'httpd-pw');
+
+
+        // 「div > div > p > a」たちにcolor:royalblueのCSSを適用
+        for (let item of document.querySelectorAll('.form-footer a')) item.style.color = 'royalblue';
     </script>
 
 </body>
