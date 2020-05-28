@@ -141,8 +141,7 @@
         for (let item of document.getElementsByClassName('form-item')) item.setAttribute('name', 'form-item');
 
         //「.form-item > input」たちのnameを設定
-        document.getElementById('id').setAttribute('name', 'httpd-id');
-        document.getElementById('password').setAttribute('name', 'httpd-pw');
+        for (let item of document.querySelectorAll('.form-item > input')) item.setAttribute('name', 'httpd-' + item.id);
 
         // 「div > div > p > a」たちにcolor:royalblueのCSSを適用
         for (let item of document.querySelectorAll('.form-footer a')) item.style.color = 'royalblue';
