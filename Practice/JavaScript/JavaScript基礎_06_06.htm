@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript基礎_06_練習問題_追加</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: silver;
+            color: #5e5e5e;
+            display: grid;
+            font: 400 87.5% / 1.5em consolas, sans-serif;
+            grid-template-columns: 100vw;
+            grid-template-rows: 100vh;
+        }
+        
+        #form-wrapper {
+            align-self: center;
+            background-color: snow;
+            border-radius: 5px;
+            justify-self: center;
+            max-width: 4000px;
+            padding: 0 1em;
+        }
+        
+        h1 {
+            text-align: center;
+            padding: 1em 0;
+        }
+        
+        #login-frm {
+            padding: 0 1.5em;
+        }
+        
+        [name="form-item"] {
+            margin-bottom: 0.75em;
+            width: 100%;
+        }
+        
+        [name="form-item"] [name|="httpd"] {
+            background-color: snow;
+            border: none;
+            border-bottom: 2px solid gainsboro;
+            color: #666;
+            font-family: consolas, sans-serif;
+            font-size: 1em;
+            height: 50px;
+            margin-left: 1em;
+            transition: border-color 0.3s;
+            width: 93%;
+        }
+        
+        [name="form-item"] input:focus {
+            border-bottom: 2px solid royalblue;
+            outline: none;
+            transition: 0.5s ease-in-out;
+        }
+        
+        #button-panel {
+            margin: 2em 0 0;
+            width: 100%;
+        }
+        
+        #button-panel .button {
+            background-color: darkblue;
+            border: none;
+            color: snow;
+            cursor: pointer;
+            font-family: consolas, sans-serif;
+            font-size: 1.2em;
+            height: 50px;
+            letter-spacing: 0.05em;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.3s ease-in-out;
+            width: 100%;
+        }
+        
+        .form-footer {
+            padding: 1em 0;
+            text-align: center;
+        }
+        
+        .form-footer a[name$="_click"] {
+            text-decoration: none;
+            transition: border-color 0.3s;
+        }
+        
+        .fly {
+            box-shadow: 20px 25px 20px #777;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fly">
+
+        <h1>ログイン</h1>
+        <form method="POST" action="#">
+            <div class="form-item">
+                <label for="id">👮ログインID</label>
+                <input type="text" id="id" placeholder="ログインIDを入力してください" value="" autofocus required>
+            </div>
+            <div class="form-item">
+                <label for="password">🔓パスワード</label>
+                <input type="password" id="password" placeholder="パスワードを入力してください" required>
+            </div>
+            <div class="button-panel" id="button-panel">
+                <button class="button submit_btn raised ripple">
+                    <span>ログイン</span>
+                </button>
+            </div>
+        </form>
+        <div class="form-footer">
+            <p><a name="new">新規登録の方はこちら</a></p>
+            <p><a name="forget">パスワードを忘れた方はこちら</a></p>
+        </div>
+    </div>
+    <script>
+        /*
+         * 追加問題
+         * 　CSSやHTML部分を変更することなく、解答例イメージとなるように、
+         * 　JavaScriptを作成してください。
+         */
+
+        document.getElementsByClassName('fly')[0].id = 'form-wrapper';
+        document.getElementById('id').setAttribute('name', 'httpd-id');
+        for (let item of document.getElementsByClassName('form-item')) item.setAttribute('name', 'form-item');
+        document.getElementById('password').setAttribute('name', 'httpd-pw');
+        document.querySelector('div[class="fly"] > form').id = 'login-frm';
+        let a = document.querySelector('.form-footer')
+        a.style
+    </script>
+
+</body>
+
+</html>
