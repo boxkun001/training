@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基礎_07　15ページ目　確認</title>
+    <style>
+        select {
+            width: 200px;
+            height: 35px;
+        }
+        
+        button:enabled {
+            background-color: green;
+            color: white;
+            cursor: pointer;
+        }
+        
+        div {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <select id="bank">
+        <option value="0001">みずほ銀行</option>
+        <option value="0005">三菱ＵＦＪ銀行</option>
+        <option value="0009">三井住友銀行</option>
+    </select>
+    <hr>
+    <div>
+        <button type="button" disabled>ボタン</button>
+    </div>
+    <input type="checkbox" id="consent"><label for="consent">同意する</label>
+    <script>
+        let event = new Event('change');
+
+        /*
+         * 課題１
+         * 　select要素の選択が変更されたときに、
+         * 　そのvalueの値とテキストの値をコンソールに出力してください
+         * ※select要素の情報に関するものは、以下のURLを参照してください
+         * 　https://developer.mozilla.org/ja/docs/Web/API/HTMLSelectElement
+         */
+        document.getElementById('bank').addEventListener('change', changeSelect);
+
+        function changeSelect() {
+            console.log(this.options[this.selectedIndex].value, ', ', this.options[this.selectedIndex].textContent);
+        };
+
+        /*
+         * 課題２
+         * 　チェックボックスがチェックされたらボタンのdisabled属性を削除し、
+         * 　チェックが外れたらdisabled属性を設定してください
+         * ※checkboxの情報に関するものは、以下のURLの「checkbox又はradio型の要素にのみに適用できる属性」を参照してください
+         * 　https://developer.mozilla.org/ja/docs/Web/API/HTMLInputElement#Properties
+         */
+        document.getElementById('consent').addEventListener('change', changeCheck);
+
+        function changeCheck() {
+            let btn = document.querySelector('body > div > button');
+            if (this.checked) btn.disabled = false;
+            else btn.disabled = true;
+        }
+        /*
+         * 課題３
+         * 　ボタンを１回クリックしたら、
+         * 　　div要素のclickイベント
+         * 　　button要素のclickイベント
+         * 　の順番でclickFunction関数が呼び出されるようにイベントを定義してください
+         */
+
+        document.querySelector('button').addEventListener('click', buttonClick);
+
+        function buttonClick() {
+            document.getElementById('bank').dispatchEvent(event);
+            document.getElementById('consent').dispatchEvent(event);
+        }
+    </script>
+</body>
+
+</html>
