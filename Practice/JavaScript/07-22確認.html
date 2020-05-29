@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基礎_07　22ページ目　確認</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <button type="button" id="button1">ボタン１</button>
+        <hr>
+        <button type="button" id="on">ボタン１にイベント登録</button>
+        <button type="button" id="off">ボタン１のイベント削除</button>
+    </div>
+
+    <script>
+        /*
+         * 課題１
+         * 　「ボタン１にイベント登録」ボタンをクリックしたら、
+         * 　「ボタン１」をクリックしたときに、現在日時をアラートダイアログで表示するイベントを登録してください。
+         */
+        let btn = document.getElementById('button1');
+
+        function listener() {
+            let today = new Date();
+            alert(today);
+        }
+
+        document.getElementById('on').addEventListener("click", () => {
+            btn.addEventListener("click", listener);
+        })
+
+        /*
+         * 課題２
+         * 　「ボタン１のイベント削除」ボタンをクリックしたら、
+         * 　「ボタン１」からイベントを登録してください。
+         */
+
+        document.getElementById('off').addEventListener("click", () => {
+            btn.removeEventListener('click', listener);
+        })
+    </script>
+</body>
+
+</html>
