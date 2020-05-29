@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基礎_07　18ページ目　確認</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <button type="button" id="button1">ボタン１</button>
+    </div>
+
+    <script>
+        /*
+         * 課題１
+         * 　「ボタン１」をクリックしたときに、
+         * 　　引数で現在日時
+         * 　を受け取り、それをアラートダイアログで表示するイベントを登録してください。
+         */
+        document.getElementById('button1').addEventListener("click", () => {
+            let today = new Date();
+            alert(today.toLocaleString());
+        })
+    </script>
+</body>
+
+</html>
