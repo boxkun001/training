@@ -61,29 +61,17 @@
         function eventAri() {
             let btn;
             let varBool;
+
             if (this.name === 'button1') {
                 btn = document.querySelector('body > div > button:nth-child(1)');
             } else if (this.name === 'button2') {
                 btn = document.querySelector('body > div > button:nth-child(2)');
             }
+
             if (this.id.includes('_no_event')) varBool = false;
             else varBool = true;
 
             if (varBool) {
-                btn.addEventListener("click", listener);
-            } else {
-                btn.removeEventListener("click", listener);
-            }
-        }
-
-        function eventNasi() {
-            let btn;
-            if (this.name === 'button1') {
-                btn = document.querySelector('body > div > button:nth-child(1)');
-            } else if (this.name === 'button2') {
-                btn = document.querySelector('body > div > button:nth-child(2)');
-            }
-            if (!(this.checked)) {
                 btn.addEventListener("click", listener);
             } else {
                 btn.removeEventListener("click", listener);
