@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基礎_07　追加問題</title>
+
+    <script>
+        let loadDate = new Date();
+        let btns = document.querySelectorAll('body > div > button');
+
+        /*
+         * 追加問題
+         * 　ボタン１またはボタン２をクリックしたら、アラートダイアログで画面を表示した時の日時を表示するようにしてください
+         * 　以下の条件を満たすように、ラジオボタンの選択変更のときのイベントを設定してください
+         * 　　・「ボタン１のイベント」のラジオボタンが「イベントあり」の場合は、ボタン１にクリックイベントを設定
+         * 　　・「ボタン１のイベント」のラジオボタンが「イベントなし」の場合は、ボタン１のクリックイベントを削除
+         * 　　・「ボタン２のイベント」のラジオボタンが「イベントあり」の場合は、ボタン２にクリックイベントを設定
+         * 　　・「ボタン２のイベント」のラジオボタンが「イベントなし」の場合は、ボタン２のクリックイベントを削除
+         */
+    </script>
+</head>
+
+<body>
+    <div>
+        <button type="button">ボタン１</button>
+        <button type="button">ボタン２</button>
+    </div>
+    <hr>
+    <div>
+        <span>ボタン１のイベント</span>
+        <input type="radio" name="button1" value="0" id="button1_event" checked>
+        <label for="button1_event">イベントあり</label>
+        <input type="radio" name="button1" value="1" id="button1_no_event">
+        <label for="button1_no_event">イベントなし</label>
+    </div>
+    <div>
+        <span>ボタン２のイベント</span>
+        <input type="radio" name="button2" value="0" id="button2_event" checked>
+        <label for="button2_event">イベントあり</label>
+        <input type="radio" name="button2" value="1" id="button2_no_event">
+        <label for="button2_no_event">イベントなし</label>
+    </div>
+    <script>
+        let today = new Date();
+
+        for (let a of document.querySelectorAll('body > div > input[value="0"]')) {
+            a.addEventListener('change', eventAri);
+        }
+        for (let a of document.querySelectorAll('body > div > input[value="1"]')) {
+            a.addEventListener('change', eventNasi);
+        }
+
+        function eventAri() {
+            let btn;
+            if (this.name === 'button1') {
+                btn = document.querySelector('body > div > button:nth-child(1)');
+            } else if (this.name === 'button2') {
+                btn = document.querySelector('body > div > button:nth-child(2)');
+            }
+            if (this.checked) {
+                btn.addEventListener("click", listener);
+            } else {
+                btn.removeEventListener("click", listener);
+            }
+        }
+
+        function eventNasi() {
+            let btn;
+            if (this.name === 'button1') {
+                btn = document.querySelector('body > div > button:nth-child(1)');
+            } else if (this.name === 'button2') {
+                btn = document.querySelector('body > div > button:nth-child(2)');
+            }
+            if (!(this.checked)) {
+                btn.addEventListener("click", listener);
+            } else {
+                btn.removeEventListener("click", listener);
+            }
+        }
+
+        document.querySelector('body > div > button:nth-child(1)').addEventListener("click", listener);
+        document.querySelector('body > div > button:nth-child(2)').addEventListener("click", listener);
+
+        function listener() {
+            alert(today);
+        }
+    </script>
+</body>
+
+</html>
