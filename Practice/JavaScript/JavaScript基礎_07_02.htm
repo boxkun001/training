@@ -46,16 +46,16 @@
                 mode = false;
                 btn.textContent = '編集モードへ';
                 for (let oya of oyas) {
-                    oya.firstElementChild.classList.toggle('hidden');
-                    oya.lastElementChild.classList.toggle('hidden');
+                    oya.firstElementChild.classList.remove('hidden');
+                    oya.lastElementChild.classList.add('hidden');
                     oya.firstElementChild.innerText = oya.lastElementChild.value;
                 }
             } else {
                 mode = true;
                 btn.textContent = '読取モードへ';
                 for (let oya of oyas) {
-                    oya.firstElementChild.classList.toggle('hidden');
-                    oya.lastElementChild.classList.toggle('hidden');
+                    oya.firstElementChild.classList.add('hidden');
+                    oya.lastElementChild.classList.remove('hidden');
                 }
             }
         })
