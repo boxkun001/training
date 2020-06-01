@@ -51,14 +51,11 @@
             alert(today);
         }
 
-        for (let a of document.querySelectorAll('body > div > input[value="0"]')) {
-            a.addEventListener('change', eventAri);
-        }
-        for (let a of document.querySelectorAll('body > div > input[value="1"]')) {
-            a.addEventListener('change', eventAri);
+        for (let a of document.querySelectorAll('body > div > input')) {
+            a.addEventListener('change', eventCheck);
         }
 
-        function eventAri() {
+        function eventCheck() {
             let btn;
             let varBool;
 
