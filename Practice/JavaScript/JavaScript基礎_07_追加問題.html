@@ -59,7 +59,6 @@
 
         function eventCheck() {
             let btn;
-            let varBool;
 
             // どのボタンかを確認する
             if (this.name === 'button1') {
@@ -68,15 +67,11 @@
                 btn = document.querySelector('body > div > button:nth-child(2)');
             }
 
-            // どのラジオボタンで呼んだかを確認する
-            if (this.id.includes('_no_event')) varBool = false;
-            else varBool = true;
-
             // 実行
-            if (varBool) {
-                btn.addEventListener("click", alertView);
-            } else {
+            if (this.id.includes('_no_event')) {
                 btn.removeEventListener("click", alertView);
+            } else {
+                btn.addEventListener("click", alertView);
             }
         }
     </script>
