@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>練習問題1</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(event) {
+            let event_control = document.getElementById('event_control');
+            event_control.checked = true;
+        });
+    </script>
+</head>
+
+<body>
+    <button type="button" id="btn1">ボタン</button>
+    <input type="checkbox" value="ON" id="event_control">
+    <script>
+        document.getElementById('btn1').addEventListener("click", () => {
+            if (document.getElementById('event_control').checked)
+                alert('チェックされています');
+        })
+    </script>
+</body>
+
+</html>
