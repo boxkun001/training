@@ -44,6 +44,12 @@
     </div>
     <script>
         let today = new Date();
+        document.querySelector('body > div > button:nth-child(1)').addEventListener("click", listener);
+        document.querySelector('body > div > button:nth-child(2)').addEventListener("click", listener);
+
+        function listener() {
+            alert(today);
+        }
 
         for (let a of document.querySelectorAll('body > div > input[value="0"]')) {
             a.addEventListener('change', eventAri);
@@ -78,13 +84,6 @@
             } else {
                 btn.removeEventListener("click", listener);
             }
-        }
-
-        document.querySelector('body > div > button:nth-child(1)').addEventListener("click", listener);
-        document.querySelector('body > div > button:nth-child(2)').addEventListener("click", listener);
-
-        function listener() {
-            alert(today);
         }
     </script>
 </body>
