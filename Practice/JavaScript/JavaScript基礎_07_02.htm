@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>練習問題2</title>
+    <style>
+        * {
+            font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+            font-weight: 500;
+            font-size: 12px;
+        }
+        
+        .oya div {
+            height: 44.4px;
+            width: 350px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="oya">
+        <div>あいうえおかきくけこさしすせそ</div><textarea class="hidden">あいうえおかきくけこさしすせそ</textarea></div>
+    <hr />
+    <div class="oya">
+        <div></div><textarea class="hidden"></textarea></div>
+    <hr />
+    <div class="oya">
+        <div>ＡＢＣＤＥＦＧＨＩＪＫＬＭＮ</div><textarea class="hidden">ＡＢＣＤＥＦＧＨＩＪＫＬＭＮ</textarea></div>
+    <button class="exec">編集モードへ</button>
+    <script>
+        let mode = false;
+        let btn = document.querySelector('body > button');
+
+        btn.addEventListener("click", () => {
+            let oyas = document.getElementsByClassName('oya');
+
+            if (mode) {
+                mode = false;
+                btn.textContent = '編集モードへ';
+                for (let oya of oyas) {
+                    oya.firstElementChild.classList.toggle('hidden');
+                    oya.lastElementChild.classList.toggle('hidden');
+                    oya.firstElementChild.innerText = oya.lastElementChild.value;
+                }
+            } else {
+                mode = true;
+                btn.textContent = '読取モードへ';
+                for (let oya of oyas) {
+                    oya.firstElementChild.classList.toggle('hidden');
+                    oya.lastElementChild.classList.toggle('hidden');
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
