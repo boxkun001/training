@@ -43,14 +43,16 @@
         <label for="button2_no_event">イベントなし</label>
     </div>
     <script>
-        let today = new Date();
-        document.querySelector('body > div > button:nth-child(1)').addEventListener("click", listener);
-        document.querySelector('body > div > button:nth-child(2)').addEventListener("click", listener);
+        // changeでaddEventListenerが実行されるので最初のイベント入り
+        document.querySelector('body > div > button:nth-child(1)').addEventListener("click", alertView);
+        document.querySelector('body > div > button:nth-child(2)').addEventListener("click", alertView);
 
-        function listener() {
-            alert(today);
+        // alertでloadDateを表示
+        function alertView() {
+            alert(loadDate);
         }
 
+        // ラジオボタンにイベントを設定
         for (let a of document.querySelectorAll('body > div > input')) {
             a.addEventListener('change', eventCheck);
         }
@@ -59,19 +61,22 @@
             let btn;
             let varBool;
 
+            // どのボタンかを確認する
             if (this.name === 'button1') {
                 btn = document.querySelector('body > div > button:nth-child(1)');
             } else if (this.name === 'button2') {
                 btn = document.querySelector('body > div > button:nth-child(2)');
             }
 
+            // どのラジオボタンで呼んだかを確認する
             if (this.id.includes('_no_event')) varBool = false;
             else varBool = true;
 
+            // 実行
             if (varBool) {
-                btn.addEventListener("click", listener);
+                btn.addEventListener("click", alertView);
             } else {
-                btn.removeEventListener("click", listener);
+                btn.removeEventListener("click", alertView);
             }
         }
     </script>
