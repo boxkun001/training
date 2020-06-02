@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基礎_08 15ページ目 確認問題</title>
+    <style>
+        span,
+        input[type="text"] {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="append_area"></div>
+
+    <input type="button" id="append_button" value="要素を追加する">
+
+    <script>
+        /*
+         * 確認問題
+         * 　id属性の値が append_button のボタンをクリックしたときに、
+         * 　　・id属性の値が append_area の div要素 の中に、テキストコンテンツに
+         * 　　　"追加されたspan要素" と出力される span要素
+         * 　　・id属性の値が append_area の div要素 の中に、value属性の値が 
+         * 　　　"追加されたテキスト欄" 、type属性の値が text の input要素
+         * 　を追加してください。
+         */
+        document.getElementById('append_button').addEventListener('click', () => {
+
+            let span = document.createElement('span');
+            let input = document.createElement('input');
+            span.textContent = '追加されたspan要素';
+            input.value = '追加されたテキスト欄';
+            input.type = 'text';
+
+            document.getElementById('append_area').appendChild(span);
+            document.getElementById('append_area').appendChild(input);
+        });
+    </script>
+
+</body>
+
+</html>
