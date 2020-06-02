@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基礎_08 24ページ目 確認問題</title>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" name="set_attr_chk" id="set_attr_chk0" value="0">
+        <input type="checkbox" name="set_attr_chk" id="set_attr_chk1" value="1">
+        <input type="checkbox" name="set_attr_chk" id="set_attr_chk2" value="2">
+    </div>
+
+    <input type="button" id="set_attr_button" value="属性を設定する">
+
+    <script>
+        /*
+         * 確認問題
+         * 　id属性の値が set_attr_button のボタンをクリックしたときに、
+         * name属性に set_attr_chk を持つすべてのチェックボックスに、
+         * disabled属性 の属性値を ture で設定してください。
+         */
+        document.getElementById('set_attr_button').addEventListener('click', () => {
+            for (let a of document.getElementsByName('set_attr_chk')) a.disabled = true;
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基礎_08 28ページ目 確認問題</title>
+</head>
+
+<body>
+    <div>
+        <input type="checkbox" name="rm_attr_chk" id="rm_attr_chk0" value="0" disabled>
+        <input type="checkbox" name="rm_attr_chk" id="rm_attr_chk1" value="1" disabled>
+        <input type="checkbox" name="rm_attr_chk" id="rm_attr_chk2" value="2" disabled>
+    </div>
+
+    <input type="button" id="rm_attr_button" value="属性を削除する">
+
+    <script>
+        /*
+         * 確認問題
+         * 　id属性の値が rm_attr_button のボタンをクリックしたときに、
+         * name属性に rm_attr_chk を持つすべてのチェックボックスから、
+         * disabled属性 を削除してください。
+         */
+        document.getElementById('rm_attr_button').addEventListener('click', () => {
+            for (let a of document.getElementsByName('rm_attr_chk')) a.disabled = false;
+        });
+    </script>
+
+</body>
+
+</html>

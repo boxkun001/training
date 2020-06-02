@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基礎_08 32ページ目 確認問題</title>
+    <style>
+        #set_label_txt:focus {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label>お名前</label>
+        <input type="text" name="set_label" id="set_label_txt" value="やまだ　たろう">
+    </div>
+
+    <input type="button" id="set_label_button" value="ラベルを設定する">
+
+    <script>
+        /*
+         * 確認問題
+         * 　id属性の値が set_label_button のボタンをクリックしたときに、
+         * id属性に set_label_txt を持つ テキスト欄 と ラベル を関連付け
+         * てください。
+         */
+        document.getElementById('set_label_button').addEventListener('click', () => {
+            document.querySelector('body > div > label').htmlFor = document.getElementById('set_label_txt').name;
+        });
+    </script>
+
+</body>
+
+</html>
