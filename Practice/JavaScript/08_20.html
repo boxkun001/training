@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基礎_08 20ページ目 確認問題</title>
+</head>
+
+<body>
+    <input type="button" id="remove_button" value="子要素を削除する">
+
+    <ul>
+        <li>りんご</li>
+        <li>バナナ</li>
+    </ul>
+    <script>
+        /*
+         * 確認問題
+         * 　id属性の値が remove_button のボタンをクリックしたときに、
+         * 　ul要素 の子要素である li要素 を すべて 削除してください。
+         */
+        document.getElementById('remove_button').addEventListener('click', () => {
+            const ul = document.querySelector('ul');
+            while (ul.firstChild) ul.removeChild(ul.firstChild);
+        });
+    </script>
+
+</body>
+
+</html>
