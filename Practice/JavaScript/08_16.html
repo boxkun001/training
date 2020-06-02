@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基礎_08 16ページ目 確認問題</title>
+</head>
+
+<body>
+    <div id="copy_area"></div>
+
+    <input type="button" id="copy_button" value="要素をコピーする">
+
+    <ul>
+        <li>りんご</li>
+        <li>バナナ</li>
+    </ul>
+    <script>
+        /*
+         * 確認問題
+         * 　id属性の値が copy_button のボタンをクリックしたときに、
+         * 　id属性の値が copy_area の div要素 の中に、
+         * 　ul要素 を li要素 含めてコピーしてください。
+         */
+        document.getElementById('copy_button').addEventListener('click', () => {
+            document.getElementById('copy_area').appendChild(document.querySelector('ul').cloneNode(true));
+        });
+    </script>
+
+</body>
+
+</html>
