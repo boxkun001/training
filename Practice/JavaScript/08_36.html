@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript基礎_08 36ページ目 確認問題</title>
+    <style>
+        .add_class {
+            background-color: brown;
+            color: white;
+            font-size: 20px;
+            height: 50px;
+            margin: 5px;
+        }
+        
+        .def_class {
+            border: 2px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="add_class" id="add_class_txt" class="def_class" value="やまだ　たろう">
+    </div>
+
+    <input type="button" id="add_class_button" value="クラスを追加する">
+
+    <script>
+        /*
+         * 確認問題
+         * 　id属性の値が add_class_button のボタンをクリックしたときに、
+         * id属性に add_class_txt を持つ テキスト欄 の class属性 に、
+         * add_class を追加してください。
+         */
+        document.getElementById('add_class_button').addEventListener('click', () => {
+            document.getElementById('add_class_txt').classList.add('add_class');
+        });
+    </script>
+
+</body>
+
+</html>
