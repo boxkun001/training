@@ -125,9 +125,10 @@
                 }
                 table.appendChild(tr);
             }
-
-            document.body.appendChild(h2);
-            document.body.appendChild(table);
+            return {
+                h2: h2,
+                table: table
+            }
 
         }
     </script>
@@ -135,7 +136,10 @@
 
 <body>
     <script>
-        calendar(2020, 2);
+        let cal = calendar(2020, 2);
+
+        document.body.appendChild(cal.h2);
+        document.body.appendChild(cal.table);
     </script>
 </body>
 
