@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>確認問題3</title>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+        
+        table {
+            font-family: sans-serif;
+            width: 440px;
+            border-collapse: collapse;
+            border: solid 2px;
+        }
+        
+        th,
+        td {
+            height: 55px;
+            border: solid 2px silver;
+        }
+        
+        th {
+            text-align: center;
+            background-color: lightgray;
+        }
+        
+        td {
+            text-align: center;
+            background-color: #fefefe;
+        }
+        
+        th:nth-child(7),
+        td:nth-child(7) {
+            color: #00f;
+            background: #e0f0fc;
+        }
+        
+        th:nth-child(1),
+        td:nth-child(1) {
+            color: #f00;
+            background: #fef2f3;
+        }
+    </style>
+    <script>
+        function FormatedYearAndMonth(target) {
+            this.format = 'YYYY年MM月';
+            this.yearAndMonth = this.format.replace(/YYYY/, target.getFullYear()).replace(/MM/, ('0' + (target.getMonth() + 1)).slice(-2));
+        }
+
+        function CreateCalendarDate(yyyy, mm) {
+            this.calendarDate = new Date();
+            this.calendarDate.setFullYear(yyyy);
+            this.calendarDate.setDate(1);
+            this.calendarDate.setMonth(mm - 1);
+        }
+
+        function calendar(yyyy, mm) {
+            let calendarDate = new CreateCalendarDate(yyyy, mm);
+            let target = calendarDate.calendarDate;
+            let format = new FormatedYearAndMonth(target).yearAndMonth;
+
+            let h2 = document.createElement('h2');
+            h2.textContent = format;
+            let table = document.createElement('table');
+            let tableHead = document.createElement('tr');
+            let youbi = ['日', '月', '火', '水', '木', '金', '土'];
+
+            for (let i = 0; i < 7; i++) {
+                let th = document.createElement('th');
+                th.textContent = youbi[i];
+                table.appendChild(th);
+            }
+            table.appendChild(tableHead);
+
+            let firstDate = new Date(yyyy, mm - 1, 1);
+            let lastDate = new Date(yyyy, mm, 0);
+            let line = Math.ceil((lastDate.getDate() + firstDate.getDay()) / 7);
+            let nowDate = 0;
+
+            for (let i = 0; i < line; i++) {
+                let tr = document.createElement('tr');
+
+                switch (i) {
+                    case 0:
+                        let j;
+                        for (j = 0; j < firstDate.getDay(); j++) {
+                            let td = document.createElement('td');
+                            td.textContent = '--';
+                            tr.appendChild(td);
+                        }
+                        while (j < 7) {
+                            nowDate++;
+                            let td = document.createElement('td');
+                            td.textContent = nowDate;
+                            tr.appendChild(td);
+                            j++;
+                        }
+                        break;
+                    case (line - 1):
+                        for (let j = 0; j < 7; j++) {
+                            if (nowDate < lastDate.getDate()) {
+                                nowDate++;
+                                let td = document.createElement('td');
+                                td.textContent = nowDate;
+                                tr.appendChild(td);
+                            } else {
+                                let td = document.createElement('td');
+                                td.textContent = '--';
+                                tr.appendChild(td);
+                            }
+                        }
+                        break;
+                    default:
+                        for (let j = 0; j < 7; j++) {
+                            nowDate++;
+                            let td = document.createElement('td');
+                            td.textContent = nowDate;
+                            tr.appendChild(td);
+                        }
+                        break;
+                }
+                table.appendChild(tr);
+            }
+
+            document.getElementById('calendar_area').appendChild(h2);
+            document.getElementById('calendar_area').appendChild(table);
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>カレンダー</h1>
+    <div id="calendar_area"></div>
+    <hr>
+    <input type="text" value="2020" id="yyyy" size="4" readonly>
+    <label for="yyyy">年</label>
+    <select id="mm">
+        <option value="0">1</option>
+        <option value="1">2</option>
+        <option value="2">3</option>
+        <option value="3">4</option>
+        <option value="4">5</option>
+        <option value="5">6</option>
+        <option value="6">7</option>
+        <option value="7">8</option>
+        <option value="8">9</option>
+        <option value="9">10</option>
+        <option value="10">11</option>
+        <option value="11">12</option>
+    </select>
+    <label for="mm">月</label>
+    <button type="button" id="display">カレンダー表示</button>
+    <script>
+        document.getElementById('display').addEventListener('click', () => {
+            let yyyy = document.getElementById('yyyy').value;
+            let mm = Number(document.getElementById('mm').options[document.getElementById('mm').selectedIndex].value) + 1;
+
+            let area = document.getElementById('calendar_area');
+            while (area.firstChild) area.removeChild(area.firstChild);
+
+            calendar(yyyy, mm);
+
+        });
+    </script>
+</body>
+
+</html>
