@@ -125,8 +125,11 @@
                 table.appendChild(tr);
             }
 
-            document.getElementById('calendar_area').appendChild(h2);
-            document.getElementById('calendar_area').appendChild(table);
+            return {
+                h2: h2,
+                table: table
+            }
+
 
         }
     </script>
@@ -162,7 +165,10 @@
             let area = document.getElementById('calendar_area');
             while (area.firstChild) area.removeChild(area.firstChild);
 
-            calendar(yyyy, mm);
+            let cal = calendar(yyyy, mm);
+
+            document.getElementById('calendar_area').appendChild(cal.h2);
+            document.getElementById('calendar_area').appendChild(cal.table);
 
         });
     </script>
