@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>練習問題1</title>
+    <style>
+        .point {
+            cursor: pointer;
+        }
+        
+        .text {
+            height: 30px;
+            width: 400px;
+        }
+        
+        label {
+            margin-right: 10px;
+        }
+        
+        #click_test {
+            display: block;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 2px tomato solid;
+            height: 50px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let textInput = document.createElement('input');
+        textInput.type = 'text';
+        textInput.id = 'test_text';
+        textInput.placeholder = '下のボタンをクリックすると、ここに現在日時が表示されます';
+        textInput.classList.add('text');
+
+        let textLabel = document.createElement('label');
+        textLabel.setAttribute('for', 'test_text');
+        textLabel.classList.add('point');
+        textLabel.textContent = '現在日時';
+
+        let textButton = document.createElement('button');
+        textButton.textContent = 'Click';
+        textButton.id = 'click_test';
+        textButton.classList.add('point');
+        textButton.addEventListener('click', () => {
+            document.querySelector('#test_text').value = new Date();
+        });
+
+        document.body.appendChild(textLabel);
+        document.body.appendChild(textInput);
+        document.body.appendChild(textButton);
+    </script>
+</body>
+
+</html>
