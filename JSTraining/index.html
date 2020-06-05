@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>確認問題3</title>
+</head>
+<style>
+    #input_form_frame {
+        position: relative;
+        margin: auto;
+        padding: 50px;
+        background-color: snow;
+        border-radius: 10px;
+        width: 768px;
+    }
+    
+    #ok,
+    #ok:hover,
+    #cancel,
+    #cancel:hover {
+        position: absolute;
+        bottom: 20px;
+        border: none;
+        width: 150px;
+        height: 35px;
+        color: white;
+    }
+    
+    #ok:hover,
+    #cancel:hover {
+        background-color: deepskyblue;
+    }
+    
+    #ok {
+        right: 20px;
+        background-color: indigo;
+    }
+    
+    #cancel {
+        right: 175px;
+        background-color: cadetblue;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    .required,
+    .arbitrary {
+        color: white;
+        height: 14px;
+        width: 30px;
+        text-align: center;
+        font-size: 12px;
+    }
+    
+    .required {
+        background-color: red;
+    }
+    
+    .arbitrary {
+        background-color: silver;
+    }
+    
+    #mail_address_form,
+    #password_form {
+        display: inline-block;
+        border: 2px solid gold;
+        background-color: lemonchiffon;
+        width: 45%;
+        height: 35px;
+    }
+    
+    #name_form {
+        border: 2px dotted gray;
+        width: 45%;
+        height: 35px;
+    }
+    
+    #cancel {
+        background-color: cadetblue;
+        color: white;
+    }
+    
+    #ok {
+        background-color: indigo;
+        color: white;
+    }
+    
+    #cancel:hover,
+    #ok:hover {
+        background-color: deepskyblue;
+    }
+    
+    .error {
+        background-color: tomato;
+        color: white;
+        width: 45%;
+        height: 35px;
+        margin-left: 5px;
+        display: none;
+    }
+    
+    .content {
+        width: 768px;
+    }
+    
+    .flex {
+        display: flex;
+    }
+</style>
+
+<body>
+    <div id="input_form_frame">
+        <h1>新規登録フォーム</h1>
+        <div class="content">
+            <label>メールアドレス</label>
+            <div class="required">必須</div>
+            <div class="flex">
+                <input type="text" id="mail_address_form" placeholder="メールアドレスを入力してください">
+                <div id="mail_address_error" class="error"></div>
+            </div>
+        </div>
+        <div class="content">
+            <label>パスワード</label>
+            <div class="required">必須</div>
+            <div class="flex">
+                <input type="text" id="password_form" placeholder="パスワードを入力してください">
+                <div id="password_error" class="error"></div>
+            </div>
+        </div>
+        <div class="content">
+            <label>お名前</label>
+            <div class="arbitrary">任意</div>
+            <input type="text" id="name_form" placeholder="お名前を入力してください">
+        </div>
+        <div>
+            <button id="cancel">キャンセル</button>
+            <button id="ok">登録</button>
+        </div>
+    </div>
+    <script src="js.js"></script>
+</body>
+
+</html>
