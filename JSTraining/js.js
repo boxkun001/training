@@ -20,7 +20,7 @@ function addressCheck(mail_address) {
         document.getElementById('mail_address_form').style.cssText = 'border:2px solid red; background-color: rgba(255, 99, 71, 0.4); ';
         document.getElementById('mail_address_error').style.display = 'inline-block';
         return '×必須入力です';
-    } else if (!(mail_address.includes('@'))) {
+    } else if ((!(mail_address.includes('@')) || mail_address[0] === '@')) {
         document.getElementById('mail_address_form').style.cssText = 'border:2px solid red; background-color: rgba(255, 99, 71, 0.4);';
         document.getElementById('mail_address_error').style.display = 'inline-block';
         return '×メールアドレスの形式が不正です';
