@@ -7,18 +7,70 @@
 </head>
 <style>
     #input_form_frame {
-        position: relative;
-        margin: auto;
-        padding: 50px;
         background-color: snow;
         border-radius: 10px;
-        width: 768px;
+        width: 668px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 50px;
+    }
+    /* #1 */
+    
+    h1 {
+        text-align: center;
+        margin-top: 0;
+    }
+    /* #2 */
+    
+    .label {
+        color: white;
+        height: 14px;
+        width: 30px;
+        text-align: center;
+        font-size: 12px;
+        padding: 2px;
+        margin: 2px 0;
+        border-radius: 5px;
     }
     
-    #ok,
-    #ok:hover,
-    #cancel,
-    #cancel:hover {
+    .required {
+        background-color: red;
+    }
+    
+    .arbitrary {
+        background-color: silver;
+    }
+    /* #4, 8, 12 */
+    
+    .flex>input {
+        display: inline-block;
+        border: 2px solid gold;
+        background-color: lemonchiffon;
+        width: 45%;
+        height: 35px;
+    }
+    /* #5, 9 */
+    
+    .error {
+        background-color: tomato;
+        color: white;
+        width: 45%;
+        height: 35px;
+        margin-left: 5px;
+        display: none;
+    }
+    /* #6, 10 */
+    
+    #name_form {
+        border: 2px dotted gray;
+        width: 45%;
+        height: 35px;
+    }
+    /* #13*/
+    
+    .button {
         position: absolute;
         bottom: 20px;
         border: none;
@@ -41,81 +93,20 @@
         right: 175px;
         background-color: cadetblue;
     }
+    /* #14, 15 */
     
-    h1 {
-        text-align: center;
-    }
-    
-    .required,
-    .arbitrary {
-        color: white;
-        height: 14px;
-        width: 30px;
-        text-align: center;
-        font-size: 12px;
-        padding: 2px;
-        margin: 2px 0;
-        border-radius: 5px;
-    }
-    
-    .required {
-        background-color: red;
-    }
-    
-    .arbitrary {
-        background-color: silver;
-    }
-    
-    #mail_address_form,
-    #password_form {
-        display: inline-block;
-        border: 2px solid gold;
-        background-color: lemonchiffon;
-        width: 45%;
-        height: 35px;
-    }
-    
-    #name_form {
-        border: 2px dotted gray;
-        width: 45%;
-        height: 35px;
-    }
-    
-    #cancel {
-        background-color: cadetblue;
-        color: white;
-    }
-    
-    #ok {
-        background-color: indigo;
-        color: white;
-    }
-    
-    #cancel:hover,
-    #ok:hover {
-        background-color: deepskyblue;
-    }
-    
-    .error {
-        background-color: tomato;
-        color: white;
-        width: 45%;
-        height: 35px;
-        margin-left: 5px;
-        display: none;
+    body {
+        background-color: #dddddd;
+        font-family: 'Noto Sans CJK JP', 'Yu Gothic', sans-serif;
     }
     
     .content {
-        width: 768px;
+        width: 668px;
         padding: 10px 0;
     }
     
     .flex {
         display: flex;
-    }
-    
-    body {
-        background-color: #dddddd;
     }
 </style>
 
@@ -124,7 +115,7 @@
         <h1>新規登録フォーム</h1>
         <div class="content">
             <label>メールアドレス</label>
-            <div class="required">必須</div>
+            <div class="required label">必須</div>
             <div class="flex">
                 <input type="text" maxlength="20" id="mail_address_form" placeholder="メールアドレスを入力してください">
                 <div id="mail_address_error" class="error"></div>
@@ -132,7 +123,7 @@
         </div>
         <div class="content">
             <label>パスワード</label>
-            <div class="required">必須</div>
+            <div class="required label">必須</div>
             <div class="flex">
                 <input type="password" maxlength="20" id="password_form" placeholder="パスワードを入力してください">
                 <div id="password_error" class="error"></div>
@@ -140,12 +131,12 @@
         </div>
         <div class="content">
             <label>お名前</label>
-            <div class="arbitrary">任意</div>
+            <div class="arbitrary label">任意</div>
             <input type="text" maxlength="20" id="name_form" placeholder="お名前を入力してください">
         </div>
         <div>
-            <button id="cancel">キャンセル</button>
-            <button id="ok">登録</button>
+            <button id="cancel" class="button">キャンセル</button>
+            <button id="ok" class="button">登録</button>
         </div>
     </div>
     <script src="js.js"></script>
