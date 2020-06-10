@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>問題３</title>
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+            grid-gap: 0;
+            border: 2px solid black;
+            height: 300px;
+            width: 300px;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        
+        .naka {
+            position: relative;
+            vertical-align: middle;
+            border: 2px solid black;
+            text-align: center;
+            font-size: 50px;
+        }
+        
+        h1,
+        #turn {
+            text-align: center;
+        }
+        
+        .naka>span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #retry {
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 0);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>○×ゲーム</h1>
+    <div id="turn">×の順番</div>
+    <div class="wrapper" id="wrapper">
+        <div class="naka" id='1'></div>
+        <div class="naka" id='2'></div>
+        <div class="naka" id='3'></div>
+        <div class="naka" id='4'></div>
+        <div class="naka" id='5'></div>
+        <div class="naka" id='6'></div>
+        <div class="naka" id='7'></div>
+        <div class="naka" id='8'></div>
+        <div class="naka" id='9'></div>
+    </div>
+    <button id="retry">リトライ</div>
+    <script src="js.js"></script>
+</body>
+
+</html>
