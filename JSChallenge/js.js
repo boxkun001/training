@@ -20,12 +20,13 @@ document.getElementById('wrapper').addEventListener('click', (e) => {
 
 document.getElementById('retry').addEventListener('click', (e) => {
     for (let i = 1; i < 10; i++) {
-        document.getElementById(i).style.backgroundColor = 'none';
+        document.getElementById(i).removeAttribute('style');
         while (document.getElementById(i).firstChild)
             document.getElementById(i).removeChild(document.getElementById(i).firstChild);
     }
     marubatsu = '×';
     document.getElementById('turn').textContent = '×の順番';
+    document.getElementById('retry').style.display = 'none';
 });
 
 function winCheck() {
@@ -52,6 +53,7 @@ function winCheck() {
         if (bool) {
             if (kijun === document.getElementById(a[1]).firstChild.textContent && kijun === document.getElementById(a[2]).firstChild.textContent) {
                 document.getElementById('turn').textContent = kijun + 'の勝ち!';
+                document.getElementById('retry').style.display = 'inline-block';
                 for (let i = 0; i < 3; i++) {
                     document.getElementById(a[i]).style.backgroundColor = 'cornsilk';
                 }
