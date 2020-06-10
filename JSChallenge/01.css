@@ -1,0 +1,32 @@
+#wrapper {
+    display: grid;
+    grid-template-columns: 60px 60px 60px 60px;
+    grid-template-rows: 60px 60px 60px 60px 60px 60px;
+    grid-gap: 10px;
+    height: min-content;
+    width: min-content;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#wrapper>div>span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#result {
+    grid-column: span 4;
+    border-radius: 10px;
+}
+
+#clear {
+    grid-column: span 3;
+}
+
+#wrapper>div {
+    position: relative;
+    border: 1px solid rgb(155, 155, 155);
+}
