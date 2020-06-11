@@ -11,12 +11,22 @@ document.getElementById('wrapper').addEventListener('click', (e) => {
 
     if (selectedElement.classList.contains('number') && temp.replace('.', '').length < 20) {
         // 数字を選択した
+        if (cal === 'equal') {
+            temp === '0';
+            x = Big(0);
+            cal = '';
+        }
         temp += selectedElement.firstChild.textContent;
         document.getElementById('value').textContent = Big(temp);
     }
     switch (selectedElement.id) {
         case 'prime':
             if (!String(temp).includes('.')) {
+                if (cal === 'equal') {
+                    temp === '0';
+                    x = Big(0);
+                    cal = '';
+                }
                 temp += selectedElement.firstChild.textContent;
                 document.getElementById('value').textContent = Big(temp);
             }
@@ -25,6 +35,7 @@ document.getElementById('wrapper').addEventListener('click', (e) => {
             //　クリアを選択した
             x = new Big(0);
             temp = '0';
+            cal = '';
             document.getElementById('value').textContent = 0;
             break;
         case 'division':
@@ -37,9 +48,8 @@ document.getElementById('wrapper').addEventListener('click', (e) => {
         case 'equal':
             if (cal === '') return;
             operation();
-            cal = '';
+            cal = 'equal';
             document.getElementById('value').textContent = x;
-            x = Big(0);
             break;
         default:
             break;
