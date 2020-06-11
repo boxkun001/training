@@ -50,10 +50,6 @@ function gameRunning() {
     ct.target.element.classList.add(ct.header.level.value);
 }
 
-/**
- * 
- * @param {KeyboardEvent} e 
- */
 function keyInput(e) {
     if (e.key === q.substr(index, 1)) {
         ct.target.typed.textContent = q.substr(0, ++index);
