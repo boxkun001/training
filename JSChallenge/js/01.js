@@ -12,13 +12,13 @@ document.getElementById('wrapper').addEventListener('click', (e) => {
     if (selectedElement.classList.contains('number') && temp.replace('.', '').length < 20) {
         // 数字を選択した
         temp += selectedElement.firstChild.textContent;
-        document.getElementById('value').textContent = Number(temp);
+        document.getElementById('value').textContent = Big(temp);
     }
     switch (selectedElement.id) {
         case 'prime':
             if (!String(temp).includes('.')) {
                 temp += selectedElement.firstChild.textContent;
-                document.getElementById('value').textContent = Number(temp);
+                document.getElementById('value').textContent = Big(temp);
             }
             break;
         case 'clear':
