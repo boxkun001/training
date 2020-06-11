@@ -1,3 +1,4 @@
+let counter = 0;
 let marubatsu = '×';
 
 document.getElementById('wrapper').addEventListener('click', (e) => {
@@ -8,13 +9,19 @@ document.getElementById('wrapper').addEventListener('click', (e) => {
             txt.style.color = 'red';
             document.getElementById('turn').textContent = '○の順番';
             marubatsu = '○';
+            counter++;
         } else {
             txt.style.color = 'blue';
             document.getElementById('turn').textContent = '×の順番';
             marubatsu = '×';
+            counter++;
         }
         e.target.appendChild(txt);
         winCheck();
+        if (counter === 9 && !document.getElementById('turn').textContent.includes('の勝ち')) {
+            document.getElementById('turn').textContent = 　'引き分け…';
+            document.getElementById('retry').style.display = 'inline-block';
+        }
     }
 });
 
@@ -27,6 +34,7 @@ document.getElementById('retry').addEventListener('click', (e) => {
     marubatsu = '×';
     document.getElementById('turn').textContent = '×の順番';
     document.getElementById('retry').style.display = 'none';
+    counter = 0;
 });
 
 function winCheck() {
@@ -60,5 +68,4 @@ function winCheck() {
             }
         }
     }
-
 }
