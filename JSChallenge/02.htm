@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>問題２</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/02.css">
+</head>
+
+<body>
+    <h1>タイピングゲーム</h1>
+    <div id="header">
+        <label>問題数：</label>
+        <select name="questionLength" id="questionLength">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+        </select>
+        <label>スピード：</label>
+        <select name="level" id="level">
+            <option value="easy">ゆっくり</option>
+            <option value="normal">普通</option>
+            <option value="hard">速い</option>
+        </select>
+    </div>
+    <div id="content">
+        <div id='body'>
+            <div id="top"></div>
+            <div id="middle">
+                <div id="target"><span id="t1"></span><span id="t2"></span></div>
+
+            </div>
+            <div id="bottom"></div>
+        </div>
+        <button id='start'>スタート</button>
+    </div>
+    <script src="js/02.js"></script>
+</body>
+
+</html>

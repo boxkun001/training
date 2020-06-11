@@ -1,0 +1,75 @@
+#top,
+#bottom {
+    height: 50px;
+    background-color: black;
+    color: white;
+}
+
+#middle {
+    position: relative;
+    height: 500px;
+}
+
+#target {
+    display: inline-block;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+#content {
+    position: relative;
+    text-align: center;
+}
+
+#t1 {
+    color: brown;
+}
+
+#t2 {
+    color: cornflowerblue;
+}
+
+#round {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 600px;
+    width: 100%;
+}
+
+#round>div {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#roundText {
+    font-size: 25px;
+}
+
+.easy {
+    animation: down 15s linear backwards;
+}
+
+.normal {
+    animation: down 10s linear backwards;
+}
+
+.hard {
+    animation: down 5s linear backwards;
+}
+
+@keyframes down {
+    from {
+        top: 2%;
+    }
+    to {
+        top: 98%;
+    }
+}
